@@ -10,6 +10,7 @@ import 'vant/lib/index.css'
 
 // 直接引入会默认去 node_modules 中找文件
 import 'amfe-flexible/index.min.js'
+
 Vue.config.productionTip = false
 
 Vue.use(Vant)

@@ -1,17 +1,22 @@
 <template>
   <div>
-    <h1>黑马头条</h1>
-    <span class="toutiao toutiao-dianzan2"></span>
-    <van-button type="primary">主要按钮</van-button>
-    <van-button type="info">信息按钮</van-button>
-    <van-button type="default">默认按钮</van-button>
-    <van-button type="warning">警告按钮</van-button>
-    <van-button type="danger">危险按钮</van-button>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-export default {}
+import request from '@/utils/request'
+export default {
+  data() {
+    return {}
+  },
+  created() {
+    // 查看请求相关配置信息 default里面的baseURL和timeout
+    console.dir(request)
+  }
+}
 </script>
 
-<style lang=""></style>
+<style lang="less">
+// 动态设置的 rootValue 要写在外联样式表里，写成行内样式不生效
+</style>
