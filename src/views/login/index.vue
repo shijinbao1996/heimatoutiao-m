@@ -103,6 +103,7 @@ export default {
         this.$toast.success('登录成功')
         // console.log(this)
         console.log(res)
+        this.$router.push('/profile')
       } catch (err) {
         console.log(err)
         const status = err.response.status
