@@ -19,7 +19,7 @@ export default new Vuex.Store({
   mutations: {
     setUser(state, payload) {
       state.user = payload
-      // token放在本地存储
+      //  为了防止刷新丢失，我们需要把token数据备份到木地存储
       setToken(payload)
     }
   },
