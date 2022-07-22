@@ -18,6 +18,7 @@
           v-for="item in articles"
           :key="item.art_id"
           :articleInfo="item"
+          :artId="item.art_id"
         ></ArticleItem>
       </van-list>
     </van-pull-refresh>
@@ -74,6 +75,7 @@ export default {
         if (!data.data.pre_timestamp) {
           this.isFinished = true
         }
+        console.log(data.data.pre_timestamp)
         // 判断上拉刷新还是下拉刷新
         if (this.refreshing) {
           // 下拉刷新

@@ -23,7 +23,7 @@ request.interceptors.request.use(
     if (token) {
       config.headers.Authorization = `Bearer ${token}` // 封装获取用户信息请求 注意加Bearer, Bearer后有空格
     }
-    console.log(config)
+    // console.log(config)
     return config
   },
   // 请求错误的时候,处理的方法

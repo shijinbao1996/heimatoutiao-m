@@ -1,6 +1,6 @@
 <template>
   <!-- 封装的复用组件 -->
-  <div>
+  <div @click="moreDetail">
     <!-- 渲染0图片 -->
     <van-cell
       v-if="articleInfo.cover.type === 0"
@@ -51,12 +51,26 @@ export default {
     articleInfo: {
       type: Object,
       required: true
+    },
+    artId: {
+      type: String,
+      required: true
+    }
+  },
+  methods: {
+    moreDetail() {
+      this.$router.push({
+        path: '/detail',
+        query: {
+          article_id: this.artId
+        }
+      })
     }
   },
   computed: {
     articleDesc() {
       const art = this.articleInfo
-      const relativeTime = dayjs(art.pubdate).fromNow()
+      const relativeTime = dayjs(art.pubdate).fromNow() // dayjs npm包
       return `${art.aut_name} ${art.comm_count}评论 ${relativeTime}`
     }
   }

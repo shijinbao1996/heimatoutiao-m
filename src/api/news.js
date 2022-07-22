@@ -15,3 +15,14 @@ export const getMyArticleList = (id, timestamp) => {
     }
   })
 }
+
+/**
+ *
+ * @param {Number} id 文章id
+ * @returns Promise
+ */
+export const getMyNewsDetail = (id) => {
+  return request({
+    url: `/v1_0/articles/${id}`
+  })
+}
