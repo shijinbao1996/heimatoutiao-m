@@ -19,6 +19,7 @@
           :key="item.art_id"
           :articleInfo="item"
           :artId="item.art_id"
+          :articles="articles"
         ></ArticleItem>
       </van-list>
     </van-pull-refresh>

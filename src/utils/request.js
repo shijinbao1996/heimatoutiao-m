@@ -21,6 +21,7 @@ request.interceptors.request.use(
   (config) => {
     const token = store.state.user.token
     if (token) {
+      // 配置请求头
       config.headers.Authorization = `Bearer ${token}` // 封装获取用户信息请求 注意加Bearer, Bearer后有空格
     }
     // console.log(config)

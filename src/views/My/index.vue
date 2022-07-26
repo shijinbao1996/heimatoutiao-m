@@ -17,7 +17,12 @@
           </van-col>
           <van-col span="11">
             <van-row class="code-row" type="flex" align="center" justify="end">
-              <van-button round size="mini" class="code-btn">
+              <van-button
+                round
+                size="mini"
+                class="code-btn"
+                @click="checkProfile"
+              >
                 编辑资料
               </van-button>
             </van-row>
@@ -90,6 +95,7 @@ export default {
     this.getUserInfo()
   },
   methods: {
+    // 退出登录
     logout() {
       this.$dialog
         .confirm({
@@ -101,6 +107,7 @@ export default {
         })
         .catch(() => {})
     },
+    // 登录
     goLogin() {
       this.$router.push('/login')
     },
@@ -120,6 +127,12 @@ export default {
       }
       // const res = await getUserInfo()
       // console.log(res)
+    },
+    // 跳转到个人信息页面
+    async checkProfile() {
+      this.$router.push({
+        name: 'user'
+      })
     }
   },
   computed: {

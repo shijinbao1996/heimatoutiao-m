@@ -55,6 +55,10 @@ export default {
     artId: {
       type: String,
       required: true
+    },
+    articles: {
+      type: Array,
+      required: true
     }
   },
   methods: {
@@ -62,7 +66,8 @@ export default {
       this.$router.push({
         path: '/detail',
         query: {
-          article_id: this.artId
+          article_id: this.artId,
+          articles: this.articles
         }
       })
     }

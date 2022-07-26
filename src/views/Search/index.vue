@@ -33,7 +33,6 @@ export default {
     return {
       keywords: '',
       isShowSearchResult: false,
-      arr: [],
       searchHistoryLs: []
     }
   },
@@ -63,14 +62,14 @@ export default {
     },
     // 删除单项搜索历史
     offSearch(item) {
-      this.arr.splice(this.arr.indexOf(item), 1)
-      setMySearchHistoryToLocal(this.arr)
+      this.searchHistoryLs.splice(this.searchHistoryLs.indexOf(item), 1)
+      setMySearchHistoryToLocal(this.searchHistoryLs)
       this.getMySearchHistoryByLocal()
     },
     // 清空搜索历史
     clearAll() {
-      this.arr = []
-      setMySearchHistoryToLocal(this.arr)
+      this.searchHistoryLs = []
+      setMySearchHistoryToLocal(this.searchHistoryLs)
     },
     // 事件在点击搜索框右侧取消按钮时触发。
     onCancel() {

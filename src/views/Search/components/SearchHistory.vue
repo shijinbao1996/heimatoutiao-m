@@ -7,18 +7,22 @@
       <template #right-icon>
         <van-icon name="delete-o" @click="iconBtn" v-if="isShow" />
         <div v-else>
-          <span @click="delAll">全部删除</span>
-          <span @click="isShow = true">完成</span>
+          <span @click.stop="delAll">全部删除</span>
+          <span @click.stop="isShow = true">完成</span>
         </div>
       </template>
     </van-cell>
 
-    <van-cell v-for="(item, index) in searchHistoryLs" :key="index">
+    <van-cell
+      v-for="(item, index) in searchHistoryLs"
+      :key="index"
+      @click="findMore(item)"
+    >
       <template #title>
-        <span @click="findMore(item)">{{ item }}</span>
+        <span>{{ item }}</span>
       </template>
       <template #right-icon>
-        <van-icon name="close" v-if="!isShow" @click="delBtn(item)" />
+        <van-icon name="close" v-if="!isShow" @click.stop="delBtn(item)" />
       </template>
     </van-cell>
   </div>

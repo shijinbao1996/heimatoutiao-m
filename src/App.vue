@@ -5,14 +5,12 @@
 </template>
 
 <script>
-import request from '@/utils/request'
 export default {
   data() {
     return {}
   },
   created() {
     // 查看请求相关配置信息 default里面的baseURL和timeout
-    console.dir(request)
   }
 }
 </script>

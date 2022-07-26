@@ -9,7 +9,8 @@ module.exports = {
 
       // 动态设置 rootValue(根元素字体大小)
       // rootValue 属性会遍历文件 若找到属于 vant 的文件则设置 rem为37.5
-      rootValue: (module) => (/vant/gi.test(module.file) ? 37.5 : 75),
+      rootValue: (module) =>
+        /(vant|markdown)/gi.test(module.file) ? 37.5 : 75,
       //适配的属性
       propList: ['*'] //['height', 'padding']
     }
